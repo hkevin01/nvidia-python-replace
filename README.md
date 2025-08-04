@@ -119,12 +119,35 @@ centrality = nx.betweenness_centrality(G)
 
 ## 🚀 Getting Started
 
-### Prerequisites
+### Hardware Compatibility
+
+#### NVIDIA GPUs (Recommended)
+
 - NVIDIA GPU with CUDA support
-- Python 3.8+
 - CUDA Toolkit 11.x or later
+- Works with all examples out of the box
+
+#### AMD GPUs (Limited Support)
+
+- Some features available through ROCm/HIP
+- Supported libraries:
+  - PyTorch with ROCm backend
+  - TensorFlow with ROCm support
+  - Limited support for XGBoost
+- Not supported:
+  - RAPIDS ecosystem (cuDF, cuML, cuGraph)
+  - NVIDIA-specific optimizations
+
+Note: For full functionality and best performance, an NVIDIA GPU is recommended. AMD GPU support is limited and may require different code paths or alternative libraries.
+
+### Prerequisites
+
+- Python 3.8+
+- For NVIDIA: CUDA Toolkit 11.x or later
+- For AMD: ROCm 5.0+ (limited functionality)
 
 ### Quick Installation
+
 ```bash
 # Clone repository
 git clone https://github.com/yourusername/gpu-accelerated-data-science.git
@@ -144,6 +167,7 @@ pip install -r requirements.txt --extra-index-url https://pypi.nvidia.com
 ## 📚 Examples and Documentation
 
 ### Interactive Examples
+
 1. **Beginner Tutorials** 🌱
    - [Basic Pandas Acceleration](notebooks/beginner/pandas_basics.ipynb) - Get started with GPU-accelerated pandas using cuDF
    - [Simple Data Transformations](notebooks/beginner/data_transforms.ipynb) - Learn common data manipulation operations
