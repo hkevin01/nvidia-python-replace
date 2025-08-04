@@ -20,6 +20,12 @@ matplotlib
 seaborn
 plotly
 
+# GUI Interface
+streamlit
+streamlit-ace
+streamlit-pandas-profiling
+altair
+
 # Development
 black
 pylint
