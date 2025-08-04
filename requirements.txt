@@ -1,0 +1,28 @@
+# Core libraries
+pandas
+polars[gpu]
+scikit-learn
+xgboost
+umap-learn
+hdbscan
+networkx
+nx-cugraph-cu11
+cudf
+cuml
+cugraph
+
+# Jupyter environment
+jupyterlab
+notebook
+
+# Visualization
+matplotlib
+seaborn
+plotly
+
+# Development
+black
+pylint
+pytest
+pytest-cov
+ipykernel
