@@ -14,6 +14,7 @@ Instantly speed up your Python data science workflows with simple drop-in GPU ac
 
 ### 1. Pandas with cuDF (10-100x speedup)
 ```python
+
 # Before: Regular pandas
 import pandas as pd
 df = pd.read_csv("large_dataset.csv")
@@ -32,10 +33,12 @@ df = pd.read_csv("large_dataset.csv")  # Same code!
 ### 2. Polars with GPU Engine (2-20x speedup)
 ```python
 # Before: Regular Polars
-result = df.groupby("column").agg([...]).collect()
+from polars import scan_csv
+df = scan_csv("large_dataset.csv").collect()
 
 # After: GPU-powered Polars
-result = df.groupby("column").agg([...]).collect(engine="gpu")
+from polars import scan_csv
+df = scan_csv("large_dataset.csv").collect(engine="gpu")  # Specify GPU engine
 ```
 
 **Performance gains:**
@@ -49,7 +52,7 @@ result = df.groupby("column").agg([...]).collect(engine="gpu")
 from sklearn.ensemble import RandomForestClassifier
 
 # After: GPU acceleration
-%load_ext cuml.accel  # One line!
+%load_ext cuml.accel
 from sklearn.ensemble import RandomForestClassifier  # Same import!
 ```
 
@@ -61,10 +64,12 @@ from sklearn.ensemble import RandomForestClassifier  # Same import!
 ### 4. XGBoost GPU Acceleration (3-15x speedup)
 ```python
 # Before: CPU training
+from xgboost import XGBRegressor
 model = XGBRegressor()
 
 # After: GPU power
-model = XGBRegressor(device="cuda")  # One parameter!
+from xgboost import XGBRegressor
+model = XGBRegressor(tree_method='gpu_hist')  # Specify GPU algorithm
 ```
 
 **Real-world gains:**
@@ -79,7 +84,7 @@ model = XGBRegressor(device="cuda")  # One parameter!
 
 # Your UMAP code stays the same!
 import umap
-reducer = umap.UMAP()
+reducer = umap.UMAP()  # Automatically uses GPU!
 ```
 
 **Performance boost:**
@@ -94,7 +99,7 @@ reducer = umap.UMAP()
 
 # Same HDBSCAN code
 import hdbscan
-clusterer = hdbscan.HDBSCAN()
+clusterer = hdbscan.HDBSCAN()  # Automatically uses GPU!
 ```
 
 **Improvements:**
@@ -104,12 +109,12 @@ clusterer = hdbscan.HDBSCAN()
 
 ### 7. NetworkX with cuGraph (10-100x speedup)
 ```python
-# Enable GPU backend
+# Enable GPU acceleration
 %env NX_CUGRAPH_AUTOCONFIG=True
 
 # Your NetworkX code stays the same!
 import networkx as nx
-centrality = nx.betweenness_centrality(G)
+centrality = nx.betweenness_centrality(G)  # Automatically uses GPU!
 ```
 
 **Speed gains:**
