@@ -145,21 +145,21 @@ pip install -r requirements.txt --extra-index-url https://pypi.nvidia.com
 
 ### Interactive Examples
 1. **Beginner Tutorials** 🌱
-   - [Basic Pandas Acceleration](notebooks/beginner/pandas_basics.ipynb)
-   - [Simple Data Transformations](notebooks/beginner/data_transforms.ipynb)
-   - [Getting Started with GPU ML](notebooks/beginner/ml_basics.ipynb)
+   - [Basic Pandas Acceleration](notebooks/beginner/pandas_basics.ipynb) - Get started with GPU-accelerated pandas using cuDF
+   - [Simple Data Transformations](notebooks/beginner/data_transforms.ipynb) - Learn common data manipulation operations
+   - [Getting Started with GPU ML](notebooks/beginner/ml_basics.ipynb) - Introduction to machine learning with GPU acceleration
 
 2. **Intermediate Examples** 🌿
-   - [Advanced Data Processing](notebooks/intermediate/advanced_processing.ipynb)
-   - [ML Pipeline Optimization](notebooks/intermediate/ml_pipelines.ipynb)
-   - [UMAP & HDBSCAN](notebooks/intermediate/clustering.ipynb)
+   - [Advanced Data Processing](notebooks/intermediate/advanced_processing.ipynb) - Complex data operations and aggregations
+   - [Data Visualization](notebooks/intermediate/data_visualization.ipynb) - Interactive GPU-accelerated visualizations
+   - [ML Techniques](notebooks/intermediate/ml_techniques.ipynb) - Advanced machine learning and model optimization
 
 3. **Advanced Topics** 🌳
-   - [Multi-GPU Processing](notebooks/advanced/multi_gpu.ipynb)
-   - [Custom Optimizations](notebooks/advanced/optimizations.ipynb)
-   - [Production Deployment](notebooks/advanced/production.ipynb)
+   - [Specialized Techniques](notebooks/advanced/specialized_techniques.ipynb) - UMAP, HDBSCAN, Graph Analytics, and Time Series
+   - [Performance Optimization](notebooks/advanced/performance_optimization.ipynb) - Memory management, batching, and profiling
 
 ### Documentation
+
 - [GUI Interface Guide](docs/gui.md)
 - [Performance Optimization Tips](docs/performance.md)
 - [Production Deployment Guide](docs/production.md)
@@ -167,16 +167,19 @@ pip install -r requirements.txt --extra-index-url https://pypi.nvidia.com
 ## 🛠️ Best Practices
 
 ### Data Transfer Optimization
+
 - Keep data on GPU when possible
 - Batch operations to minimize transfers
 - Use GPU-native formats (cuDF, Arrow)
 
 ### Memory Management
+
 - Monitor GPU memory usage
 - Use streaming for large datasets
 - Clear unused variables
 
 ### Operation Selection
+
 - Profile operations before GPU migration
 - Some operations are faster on CPU
 - Consider data size thresholds
